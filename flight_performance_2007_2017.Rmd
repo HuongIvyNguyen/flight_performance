@@ -1,0 +1,49 @@
+---
+title: "flight_performance"
+author: "Ivy Huong Nguyen"
+date: "March 30, 2017"
+output: html_document
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+
+#Set directory
+setwd("~/Documents/flight_performance/") 
+
+#Import dataset as a dataframe
+flight <- read.csv("flight_performance.csv", header=T, check.names=F)
+#Remove extra column with NA values
+flight<- data[,1:ncol(data)-1] 
+```
+
+```{r}
+#Get a summary of datatyoe and data info using summary and str
+str(data)
+summary(data)
+```
+
+```{r}
+#Check how many carriers in this dataset
+carriers <- unique(data$carrier_name)
+```
+
+```{r}
+require(ggplot2)
+require(grid)
+require(scales)
+require(dplyr)
+require(gridExtra)
+library(RColorBrewer)
+library(ggthemes)
+library(gender)
+library(reshape2)
+library(GGally)
+```
+
+```{r}
+print(colnames(flight))
+ggplot(data = flight, aes(flight$weather_delay))+
+   geom_histogram(aes(color = flight$carrier_name))
+```
+
