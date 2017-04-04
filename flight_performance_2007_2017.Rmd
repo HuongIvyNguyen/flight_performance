@@ -1,9 +1,14 @@
 ---
-title: "flight_performance"
+title: "Investigate flight performance of U.S. domestic carriers from 2007-2017"
 author: "Ivy Huong Nguyen"
 date: "March 30, 2017"
 output: html_document
 ---
+##**INTRODUCTION**##
+
+In this project, a investigation of flight performance of all U.S. domestic carriers will be carried out. The dataset for this study contains information of all U.S. carriers regarding flight delays and performace. This dataset was obtained from the following link: https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp?pn=1, which includes data collected from January 2007 to January 2017. A detailed study will be focused on the top 5 carriers with the largest number of on-time flights and the largest number of delayed flights caused by different reasons. 
+
+##**DATA EXPLORATORY SECTION**##
 
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
@@ -13,20 +18,35 @@ setwd("~/Documents/flight_performance/")
 
 #Import dataset as a dataframe
 flight <- read.csv("flight_performance.csv", header=T, check.names=F)
-#Remove extra column with NA values
-flight<- data[,1:ncol(data)-1] 
 ```
 
+###Data Structure###
+
 ```{r}
-#Get a summary of datatyoe and data info using summary and str
-str(data)
-summary(data)
+#Get a summary of datatype and data info using summary and str
+str(flight)
+summary(flight)
+
+#Inspect the structure of the data using head(data)
+head(flight)
 ```
+
+The dataset includes 22 different variables with 160555 observations for each variable. One variable in this dataset is actually an empty column with NA values and thus will need to be removed during the analysis. 
+
+```{r}
+flight <- flight[,colSums(is.na(flight))<nrow(flight)]
+```
+
+First I would like to know how many carriers are there in this dataset. In order to accomplish this, I count all the unique names in the carrier_name column, which then returns 24. 
 
 ```{r}
 #Check how many carriers in this dataset
 carriers <- unique(data$carrier_name)
+
+print(paste("There are", length(carriers), "carriers in this dataset."))
 ```
+
+###Load necessary packages for data exploration and analysis###
 
 ```{r}
 require(ggplot2)
@@ -41,9 +61,50 @@ library(reshape2)
 library(GGally)
 ```
 
+###Generate new summary dataset for all carriers in the past 10 years
+
+First, I would like to establish a new summary dataframe which includes the information regarding the total number of arrivals, delayed flights, cancelled flights, and on-time flights that each carrier has by year. 
+
 ```{r}
-print(colnames(flight))
-ggplot(data = flight, aes(flight$weather_delay))+
-   geom_histogram(aes(color = flight$carrier_name))
+flight_summary <- flight %>%
+   group_by(year, carrier_name) %>%
+   summarize(arrivals = sum(arr_flights), 
+             delayed = sum(arr_del15), 
+             cancelled = sum(arr_cancelled), 
+             diverted = sum(arr_diverted)) %>%
+   transform(on_time = 1 - delayed/arrivals) 
+```
+
+After obtaining the new flight summary dataframe, I realized there are numerous rows with NA values. I chose to remove these rows since these airlines basically do not have any information to evaluate their performance. 
+
+```{r}
+#Remove all row with NA values from the flight_summary dataframe
+flight_summary <- na.omit(flight_summary)
+```
+
+After removing all rows with NA values, I finally got the new summary dataframe with non-NA values for 97 different carriers. 
+
+###Line plot for the # of one-time flights by year for each carrier###
+
+```{r}
+ggplot(data = flight_summary, aes(x=year, y=on_time))+
+   scale_x_continuous(name = "Year", 
+                    breaks = seq(2007, 2017, 1))+
+   geom_line(aes(color=carrier_name))
+```
+
+The above line plot looks very busy and hard to follow for any type of audience. Because of that, I chose to focus on primarily two sets of top five airlines:
++ Top five airlines that have the largest number of delayed flights
++ Top five airlines that have the largest number of on-time flights
+
+Beyond that, I want to also focus on investigating which is the most common cause for delaying flights within these top five carriers. 
+
+###Top five airlines with the largest number of delayed flights:
+
+```{r}
+top_five_delayed <- flight_summary %>%
+   group_by(year, carrier_name)%>%
+   arrange(desc(delayed))%>%
+   top_n(5, delayed)
 ```
 
