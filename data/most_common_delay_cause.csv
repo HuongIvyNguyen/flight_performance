@@ -1,0 +1,31 @@
+"carrier_name","variable","value"
+"American Airlines Inc.","arr_delay",54054215
+"American Eagle Airlines Inc.","arr_delay",42554371
+"Northwest Airlines Inc.","arr_delay",5846678
+"SkyWest Airlines Inc.","arr_delay",13705703
+"Southwest Airlines Co.","arr_delay",104859904
+"American Airlines Inc.","carrier_delay",16446042
+"American Eagle Airlines Inc.","carrier_delay",11428758
+"Northwest Airlines Inc.","carrier_delay",2276303
+"SkyWest Airlines Inc.","carrier_delay",5528450
+"Southwest Airlines Co.","carrier_delay",26163416
+"American Airlines Inc.","weather_delay",3288391
+"American Eagle Airlines Inc.","weather_delay",3011519
+"Northwest Airlines Inc.","weather_delay",316527
+"SkyWest Airlines Inc.","weather_delay",648945
+"Southwest Airlines Co.","weather_delay",4171779
+"American Airlines Inc.","nas_delay",15501357
+"American Eagle Airlines Inc.","nas_delay",11564873
+"Northwest Airlines Inc.","nas_delay",1910645
+"SkyWest Airlines Inc.","nas_delay",2498133
+"Southwest Airlines Co.","nas_delay",14935111
+"American Airlines Inc.","security_delay",50610
+"American Eagle Airlines Inc.","security_delay",19745
+"Northwest Airlines Inc.","security_delay",8769
+"SkyWest Airlines Inc.","security_delay",38479
+"Southwest Airlines Co.","security_delay",270563
+"American Airlines Inc.","late_aircraft_delay",18767815
+"American Eagle Airlines Inc.","late_aircraft_delay",16529476
+"Northwest Airlines Inc.","late_aircraft_delay",1334434
+"SkyWest Airlines Inc.","late_aircraft_delay",4991696
+"Southwest Airlines Co.","late_aircraft_delay",59319035
