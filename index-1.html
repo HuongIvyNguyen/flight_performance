@@ -1,0 +1,17 @@
+<html>
+<div id="chartContainer">
+  <script src="/lib/d3.v4.3.0.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 1400, 700);
+    d3.csv("/data/most_common_delay_cause.csv", function (data) {
+      var myChart = new dimple.chart(svg, data);
+      myChart.addCategoryAxis("x", "variable");
+      myChart.addMeasureAxis("y", "value");
+      myChart.addSeries("carrier_name", dimple.plot.bar);
+      myChart.addLegend(65, 10, 510, 20, "right");
+      myChart.draw();
+    });
+  </script>
+</div>
+</html>
