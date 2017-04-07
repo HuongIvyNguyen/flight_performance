@@ -35,6 +35,25 @@ Lastly, I also investigated the performance of these airlines (in the top five d
 
 [alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic5.png)
 
+### Data Visualization with D3.js and Dimple.js
+
+I decided to improve the plots generated for the top five airlines with the highest averaged number of delayed flights, for the top five airlines with the highest averaged on-time percentage, for the most common delay cause. I implemented D3.js and dimple.js to improve the visualization of these plots. I then collected feedback and reevaluated my design a bit for all the charts. The intial design can be viewed in index-initial.html.
+
 ## Feedback
+ I interviewed 3 people after showing them my intial design and asked for their feedback. 
+
+### Feedback 1
+> I recommend to remove all the gridlines from all plots so it is less messy when you look at the graphs. Also, all the fontsize needs to be bigger for better visualization. 
+
+### Feedback 2
+> The popup effect is very cool; however, it would be better off if you actually can make it a big bigger so people can read what the data is. Also, it probably will be better off if you can add in some other effect that can isolate the bar graph for each carrier in the last plot. This could help to emphasize which is the most common cause for delay flights for this carrier versus the others. It might be not necessary in this senario since all airlines seems to have arrival delay as the most common cause but may be good to include that so people can shift their attention to individual case. 
+
+### Feedback 3
+> I absolutely think you should change from stacked bar to grouped bar for the last bar graph since it might be a bit confusing if the top variable has a larger value than the bottom one. Also, the size of all the bars in the first two graphs should also be smaller. 
+
+## Post-feedback Design
+
 
 ## Resources
++ [Dimple.js](http://dimplejs.org/)
++ [D3.js](https://d3js.org/)
