@@ -126,13 +126,13 @@ ggplot(data = top_five_delayed, aes(x=carrier_name, ave_delayed))+
    geom_bar(stat = 'identity', position = 'dodge')+
    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust=.4))+
    labs(x="carrier name", y='Average number of delayed flights')+
-   ggtitle("Average number of delayed flights from Jan 2007 to Jan 2017")
+   ggtitle("Average number of delayed flights from Jan 2005 to Jan 2015")
 
 ggplot(data = top_five_ontime, aes(x=carrier_name, y=ave_ontime))+
    geom_bar(stat = 'identity', position = 'dodge')+
    labs(x='carrier name', y='Average proportion of on-time flights')+
    theme(axis.text.x = element_text(angle = 90, hjust=1, vjust=.4))+
-   ggtitle('Average proportion of on-time flights from Jan 2007 to Jan 2017')
+   ggtitle('Average proportion of on-time flights from Jan 2005 to Jan 2015')
 ```
 
 Southwest airlines has the highest average number of delayed flights from 2005-2015. Aloha Airlines and Hawaian Airlines both have really high on-time proportion, 93% and 92% respectively. 
@@ -161,7 +161,7 @@ delay_summary <- na.omit(delay_summary)
 #Calcuate the average number of delayed flight by each category from 2005-2017
 average_delay_summary <- delay_summary %>%
   group_by(carrier_name)%>%
-  summarize(arr_delay = sum(arr_delay), 
+  summarize(arrival_delay = sum(arr_delay), 
             carrier_delay = sum(carrier_delay), 
             weather_delay = sum(weather_delay), 
             nas_delay = sum(nas_delay), 
@@ -176,10 +176,10 @@ average_delay_summary <- melt(average_delay_summary,
                               id.vars = "carrier_name")
 
 ggplot(data = average_delay_summary, 
-       aes(x=variable, y=value, fill=carrier_name))+
+       aes(x=carrier_name, y=value, fill=variable))+
   geom_bar(stat = 'identity', 
            position = 'dodge',
-           aes(color = carrier_name))+
+           aes(color = variable))+
   theme(axis.text.x = element_text(angle = 90, hjust=1, vjust=.4))+
   ggtitle("Comparison between different delay cause by carrier")
   
@@ -258,6 +258,5 @@ It is very interesting that American Arlines and American Eagles Airlines both m
 write.csv(top_five_delayed, file="top_five_delay.csv", row.names = FALSE)
 write.csv(top_five_ontime, file="top_five_on_time.csv", row.names = FALSE)
 write.csv(average_delay_summary, file="most_common_delay_cause.csv", row.names = FALSE)
-write.csv(new_subset_flight, file="performance_over_time.csv", row.names=FALSE)
 ```
 

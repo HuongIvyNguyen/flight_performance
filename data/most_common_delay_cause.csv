@@ -1,9 +1,9 @@
 "carrier_name","variable","value"
-"American Airlines Inc.","arr_delay",54054215
-"American Eagle Airlines Inc.","arr_delay",42554371
-"Northwest Airlines Inc.","arr_delay",5846678
-"SkyWest Airlines Inc.","arr_delay",13705703
-"Southwest Airlines Co.","arr_delay",104859904
+"American Airlines Inc.","arrival_delay",54054215
+"American Eagle Airlines Inc.","arrival_delay",42554371
+"Northwest Airlines Inc.","arrival_delay",5846678
+"SkyWest Airlines Inc.","arrival_delay",13705703
+"Southwest Airlines Co.","arrival_delay",104859904
 "American Airlines Inc.","carrier_delay",16446042
 "American Eagle Airlines Inc.","carrier_delay",11428758
 "Northwest Airlines Inc.","carrier_delay",2276303
