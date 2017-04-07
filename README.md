@@ -1,15 +1,15 @@
-#** Investigate the Performance of U.S. DOmestic Carriers from 2005-2015
+# Investigate the Performance of U.S. Domestic Carriers from 2005-2015
 
-##** Summary 
+## Summary 
 
 In this project, the flight performance of all domestic U.S. carriers was investiagted for the period 2005-2015. The dataset for this study was obtained from the following link:https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp?pn=1.The main visualization focuses on three different charts:
 + The averaged number of delay flights for the top five airlines with the highest number of delayed flights
 + The averaged percentaged of on-time flights for the top five airlines with the highest percentage of on-time flights
 + A distribution of number of flights delayed by different cause for all airines in the top five airlineds with the highest number of delayed flights.  
 
-##** Design 
+## Design 
 
-###** Data Exploration with RStudio 
+### Data Exploration with RStudio 
 
 The exploratory data analysis was conducted using RStudio. At first, I observed the obtained dataset, created a new flight performance summary grouping by carrier name and year. The new dataset is named: flight_summary which has the following 
 + Summ of all the arrivals for each carrier by year
@@ -35,6 +35,6 @@ Lastly, I also investigated the performance of these airlines (in the top five d
 
 [alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic5.png)
 
-##** Feedback
+## Feedback
 
-##** Resources
+## Resources
