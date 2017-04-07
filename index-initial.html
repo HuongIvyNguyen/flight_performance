@@ -95,7 +95,7 @@
         /*Dimple.js setup code*/
 
         var myChart = new dimple.chart(svg, data);
-        var x = myChart.addCategoryAxis("x", ["carrier_name", 'variable']);
+        var x = myChart.addCategoryAxis("x", ["carrier_name"]);
         x.title = 'Carrier Name';
         x.fontSize = fontsize;
 
@@ -115,7 +115,6 @@
         .style("text-decoration", "bold")  
         .text("Average Number of Delayed Flight by Different Cause, 2005-2015");  
     }
-    
 
     </script>
 </head>

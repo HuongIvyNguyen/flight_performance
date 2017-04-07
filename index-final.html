@@ -137,6 +137,7 @@
         y.fontSize = fontsize;
         var series = myChart.addSeries("variable", dimple.plot.bar);
         var story = myChart.setStoryboard("carrier_name");
+        story.frameDuration = 60;
         var legend = myChart.addLegend(width*0.65, 60, width*0.25, 60, 'right');
         legend.fontSize = fontsize;
         myChart.draw();
