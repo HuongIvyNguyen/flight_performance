@@ -255,7 +255,7 @@ It is very interesting that American Arlines and American Eagles Airlines both m
 
 ```{r}
 ##Create new CSV
-write.csv(top_five_delayed, file="top_five_delay.csv", row.names = FALSE)
+write.tsv(top_five_delayed, file="top_five_delay.csv", row.names = FALSE)
 write.csv(top_five_ontime, file="top_five_on_time.csv", row.names = FALSE)
 write.csv(average_delay_summary, file="most_common_delay_cause.csv", row.names = FALSE)
 ```

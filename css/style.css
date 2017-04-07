@@ -12,3 +12,6 @@ svg {
   margin: auto;
 }
 
+rect.dimple-custom-tooltip-box {
+    fill: red !important;
+}

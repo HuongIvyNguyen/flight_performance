@@ -38,6 +38,54 @@
         y.title = 'Average Number of Delayed Flights'
         y.fontSize = fontsize;
         var series = myChart.addSeries(null, dimple.plot.bar);
+        series.addEventHandler("mouseover", onHover);
+        series.addEventHandler("mouseleave", onLeave);
+
+        function onHover(e) {
+            var cx = parseFloat(e.selectedShape.attr("x"));
+            var cy = parseFloat(e.selectedShape.attr("y"));
+
+            var width = 300; 
+            var height = 140;
+
+            var x = (cx + width + 10 < svg.attr("width") ?
+                cx + 10:
+                cx - width-20);
+
+            var y = (cy - height/2 < 0 ?
+                15 :
+                cy - height/2);
+            
+            popup = svg.append('g')
+            
+            popup.append('rect')
+            .attr("x", x+5)
+            .attr("y", y-5)
+            .attr("width", width)
+            .attr("height", height)
+            .attr("rx", 5)
+            .attr("ry", 5)
+            .style("fill", "white")
+            .style("stroke-width", 2);
+
+            popup.append("text")
+            .attr("x", x+10)
+            .attr("y", y+10)
+            .append("tspan")
+            .attr("x", x+10)
+            .attr("y", y+20)
+            .text("Numer of Delayed Flight:", e.seriesValue[5])
+            .style("font-size", fontsize)
+        }
+
+        function onLeave(e) {
+            if (popup != null) {
+                popup.remove();
+            }
+        }
+
+
+
         series.barGap = 0.5;
         myChart.draw();    
 
@@ -52,18 +100,18 @@
         
         /*Add mouseover effect for bar chart */    
         
-        svg.selectAll("rect")
-        .on('mouseover', function(e){
-            d3.select(this)
-            .style("stroke-width", "5px")
-            .style("opacity", 2)
-            .style("fill", "green")
-        })
-        .on('mouseleave', function(e){
-            d3.select(this)
-            .style("stroke-width", "0px")  
-            .style("fill", "lightblue")  
-        })
+        // svg.selectAll("rect")
+        // .on('mouseover', function(e){
+        //     d3.select(this)
+        //     .style("stroke-width", "5px")
+        //     .style("opacity", 2)
+        //     .style("fill", "green")
+        // })
+        // .on('mouseleave', function(e){
+        //     d3.select(this)
+        //     .style("stroke-width", "0px")  
+        //     .style("fill", "lightblue")  
+        // })
 
     }
 
@@ -88,6 +136,8 @@
         y.tickFormat = '%';
         y.fontSize = fontsize;
         var series = myChart.addSeries(null, dimple.plot.bar);
+        
+
         series.barGap = 0.5
         myChart.draw();   
 
@@ -136,8 +186,7 @@
         y.title = 'The averaged number of flights';
         y.fontSize = fontsize;
         var series = myChart.addSeries("variable", dimple.plot.bar);
-        var story = myChart.setStoryboard("carrier_name");
-        story.frameDuration = 60;
+        var story = myChart.setStoryboard("carrier_name");;
         var legend = myChart.addLegend(width*0.65, 60, width*0.25, 60, 'right');
         legend.fontSize = fontsize;
         myChart.draw();
