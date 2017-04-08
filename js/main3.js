@@ -9,26 +9,29 @@
 
         /*Dimple.js setup code*/
 
+        //Define chart using dimple
         var myChart = new dimple.chart(svg, data);
-        var x = myChart.addCategoryAxis("x", ["carrier_name", 'variable']);
+        var x = myChart.addCategoryAxis("x", ["carrier_name","variable"]);
         x.title = 'Carrier Name';
         x.fontSize = fontsize;
 
         var y = myChart.addMeasureAxis("y", "value");
         y.title = 'The averaged number of flights';
         y.fontSize = fontsize;
+        y.tickFormat = '%';
         var series = myChart.addSeries("variable", dimple.plot.bar);
         var legend = myChart.addLegend(width*0.65, 60, width*0.25, 60, 'right');
         legend.fontSize = fontsize;
         myChart.draw();
 
+        //Add in title
         svg.append("text")
         .attr("x", (width / 2))             
         .attr("y", margin/2)
         .attr("text-anchor", "middle")  
         .style("font-size", titlefont) 
         .style("text-decoration", "bold")  
-        .text("Average Number of Delayed Flight by Different Cause, 2005-2015"); 
+        .text("Arrival Delay is the Most Common Cause in Delaying Flights During 2005-2015"); 
 
     }
 

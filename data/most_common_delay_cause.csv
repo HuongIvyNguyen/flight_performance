@@ -1,31 +1,31 @@
 "carrier_name","variable","value"
-"American Airlines Inc.","arrival_delay",54054215
-"American Eagle Airlines Inc.","arrival_delay",42554371
-"Northwest Airlines Inc.","arrival_delay",5846678
-"SkyWest Airlines Inc.","arrival_delay",13705703
-"Southwest Airlines Co.","arrival_delay",104859904
-"American Airlines Inc.","carrier_delay",16446042
-"American Eagle Airlines Inc.","carrier_delay",11428758
-"Northwest Airlines Inc.","carrier_delay",2276303
-"SkyWest Airlines Inc.","carrier_delay",5528450
-"Southwest Airlines Co.","carrier_delay",26163416
-"American Airlines Inc.","weather_delay",3288391
-"American Eagle Airlines Inc.","weather_delay",3011519
-"Northwest Airlines Inc.","weather_delay",316527
-"SkyWest Airlines Inc.","weather_delay",648945
-"Southwest Airlines Co.","weather_delay",4171779
-"American Airlines Inc.","nas_delay",15501357
-"American Eagle Airlines Inc.","nas_delay",11564873
-"Northwest Airlines Inc.","nas_delay",1910645
-"SkyWest Airlines Inc.","nas_delay",2498133
-"Southwest Airlines Co.","nas_delay",14935111
-"American Airlines Inc.","security_delay",50610
-"American Eagle Airlines Inc.","security_delay",19745
-"Northwest Airlines Inc.","security_delay",8769
-"SkyWest Airlines Inc.","security_delay",38479
-"Southwest Airlines Co.","security_delay",270563
-"American Airlines Inc.","late_aircraft_delay",18767815
-"American Eagle Airlines Inc.","late_aircraft_delay",16529476
-"Northwest Airlines Inc.","late_aircraft_delay",1334434
-"SkyWest Airlines Inc.","late_aircraft_delay",4991696
-"Southwest Airlines Co.","late_aircraft_delay",59319035
+"Envoy Air","arrival_delay",0.5
+"JetBlue Airways","arrival_delay",0.5
+"Mesa Airlines Inc.","arrival_delay",0.5
+"Northwest Airlines Inc.","arrival_delay",0.5
+"Spirit Air Lines","arrival_delay",0.5
+"Envoy Air","carrier_delay",0.124499023478713
+"JetBlue Airways","carrier_delay",0.119308833901543
+"Mesa Airlines Inc.","carrier_delay",0.180601568246889
+"Northwest Airlines Inc.","carrier_delay",0.194666355834886
+"Spirit Air Lines","carrier_delay",0.0726004189035593
+"Envoy Air","weather_delay",0.0408070433714363
+"JetBlue Airways","weather_delay",0.0147289044273464
+"Mesa Airlines Inc.","weather_delay",0.0229038394053847
+"Northwest Airlines Inc.","weather_delay",0.0270689612118198
+"Spirit Air Lines","weather_delay",0.00216957730772255
+"Envoy Air","nas_delay",0.136669460370808
+"JetBlue Airways","nas_delay",0.165093466546923
+"Mesa Airlines Inc.","nas_delay",0.0825420813361707
+"Northwest Airlines Inc.","nas_delay",0.163395777910123
+"Spirit Air Lines","nas_delay",0.335651838243179
+"Envoy Air","security_delay",0.000734539923574281
+"JetBlue Airways","security_delay",0.0013743462082397
+"Mesa Airlines Inc.","security_delay",0.000976352021398725
+"Northwest Airlines Inc.","security_delay",0.00074991302753461
+"Spirit Air Lines","security_delay",0.00137251678116221
+"Envoy Air","late_aircraft_delay",0.197289932855468
+"JetBlue Airways","late_aircraft_delay",0.199494448915948
+"Mesa Airlines Inc.","late_aircraft_delay",0.212976158990157
+"Northwest Airlines Inc.","late_aircraft_delay",0.114118992015637
+"Spirit Air Lines","late_aircraft_delay",0.0882056487643775

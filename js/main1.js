@@ -25,21 +25,29 @@
         x.fontSize = fontsize;
 
         var y = myChart.addMeasureAxis("y", "ave_delayed");
-        y.title = 'Average Number of Delayed Flights'
+        y.title = 'Percentage of Delayed Flights over Totals'
         y.fontSize = fontsize;
+        y.tickFormat = '%';
         var series = myChart.addSeries(null, dimple.plot.bar);
+        // Handle the hover event - overriding the default behaviour
         series.addEventHandler("mouseover", onHover);
+        // Handle the leave event - overriding the default behaviour
         series.addEventHandler("mouseleave", onLeave);
 
+        //Define popup variable//
         var popup; 
 
+        // Event to handle mouse enter
         function onHover(e) {
+
+            // Get the properties of the selected shape
             var cx = parseFloat(e.selectedShape.attr("x"));
             var cy = parseFloat(e.selectedShape.attr("y"));
 
+            // Set the size and position of the popup
             var width = 100; 
             var height = 70;
-
+            
             var x = (cx + width + 10 < svg.attr("width") ?
                 cx + 10:
                 cx - width-20);
@@ -48,8 +56,10 @@
                 15 :
                 cy - height/2);
             
+            // Create a group for the popup objects
             popup = svg.append('g')
             
+            // Add a rectangle surrounding the text
             popup.append('rect')
             .attr("x", x+75)
             .attr("y", y-5)
@@ -59,6 +69,7 @@
             .attr("ry", 5)
             .style("fill", "#6d6b6b")
 
+            // Add multiple lines of text
             popup.append("text")
             .append("tspan")
             .attr("x", x+85)
@@ -70,15 +81,17 @@
             .append("tspan")
             .attr("x", x+85)
             .attr("y", y+45)
-            .text("Flight:" + Math.round(e.yValue))
+            .text("Flight:" + Math.floor(e.yValue*100)+"%")
             .style("font-size", "14px")
-    
+            
+            //Add color change for mouseover effect
             d3.select(e.selectedShape[0][0])
             .style("stroke-width", "5px")
             .style("fill", "#18447f")
             .style("stroke", '#211f1f')
         }
 
+        // Event to handle mouse exit
         function onLeave(e) {
             if (popup != null) {
                 popup.remove();
@@ -89,8 +102,7 @@
             .style("fill", "#06303e")  
         }
 
-
-
+        //Set up bar gap for the bar chart
         series.barGap = 0.5;
         myChart.draw();    
 
@@ -100,7 +112,7 @@
         .attr("text-anchor", "middle")  
         .style("font-size", titlefont) 
         .style("text-decoration", "bold")  
-        .text("Top Five Airlines with the Highest Average Number of Delayed Flights, 2005-2015");
+        .text("Top Five Worst Performing Airlines: Envoy and Northwest Airlines are Top the List with 28% in Delayed Flights");
     }
 
     d3.csv("data/top_five_delay.csv", draw1)

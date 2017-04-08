@@ -16,6 +16,7 @@ The exploratory data analysis was conducted using RStudio. At first, I observed 
 + Summ of all the delayed flights for each carrier by year
 + Sum of all diverted flights for each carrier by year
 + New variable is added: on_time = 1 - sum(arrivals)/sum(delayed)
++ New variable is added for calculating the percentage of delayed flights over total flights
 
 The detailed of this step can be viewed via data/flight_performance_2005_2015.Rmd file. At first I plotted the on-time percentage for each carrier by year; however, this plot turned out to be very busy since there are 24 carriers in total. The figure was super clustered and squeezed into a corner since the legend takes all the space.
 
@@ -36,7 +37,7 @@ Lastly, I also investigated the performance of these airlines (in the top five d
 [alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic5.png)
 
 ### Data Visualization with D3.js and Dimple.js
-I decided to improve the plots generated for the top five airlines with the highest averaged number of delayed flights, for the top five airlines with the highest averaged on-time percentage, for the most common delay cause. I implemented D3.js and dimple.js to improve the visualization of these plots. I then collected feedback and reevaluated my design a bit for all the charts. The intial design can be viewed in index-initial.html.
+I decided to improve the plots generated for the top five airlines with the highest averaged percentage of delayed flights, for the top five airlines with the highest averaged on-time percentage, for the most common delay cause. I implemented D3.js and dimple.js to improve the visualization of these plots. I then collected feedback and reevaluated my design a bit for all the charts. The intial design can be viewed in index-initial.html.
 
 ## Feedback
  I interviewed 3 people after showing them my intial design and asked for their feedback. 
@@ -52,10 +53,13 @@ I decided to improve the plots generated for the top five airlines with the high
 
 ## Post-feedback Design
 After reviewing all the feedback, I made the following changes for my data visualization: 
-+ Changed the last bar chart from stacked format to grouped format
++ Changed the last bar chart from stacked format to grouped format.I chose grouped bar chart instead of stacked bar charts since I think it shows the distribution among all variables for each carrier in the list for comparison. 
 + Removed gridlines from all backgrounds
 + Overwrote the default tooltips and added in new effect for mouseover for the first two bar charts
 + Adjusted the size so that all content can be fitted in a single page without scrolling over horizontally
++ Corrected all titles for all charts so the graphs are more explanatory and storytelling to the audience. 
+
+I chose to keep the tooltip format for the last bar chart since I like how it shows the information for each carrier with the responding variable. Also, I like the underline effect, whick helps to compare which is the most common cause in delaying flights for all cariers in the top-five-delay list. 
 
 The final visualization can be accesses via index-final.html file.
 

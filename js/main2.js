@@ -9,7 +9,7 @@
         /*Dimple.js setup code*/
 
         var myChart = new dimple.chart(svg, data);
-        myChart.defaultColors = [new dimple.color("#06303e")];
+        myChart.defaultColors = [new dimple.color("#f44242")];
         var x = myChart.addCategoryAxis("x", "carrier_name");
         x.fontSize = fontsize;
         x.title = 'Carrier Name';
@@ -19,16 +19,22 @@
         y.tickFormat = '%';
         y.fontSize = fontsize;
         var series = myChart.addSeries(null, dimple.plot.bar);
+        // Handle the hover event - overriding the default behaviour
         series.addEventHandler("mouseover", onHover);
+        // Handle the leave event - overriding the default behaviour
         series.addEventHandler("mouseleave", onLeave);
 
+        //Define popup variable
         var popup; 
 
+        // Event to handle mouse enter
         function onHover(e) {
-            console.log(e);
+            
+            // Get the properties of the selected shape
             var cx = parseFloat(e.selectedShape.attr("x"));
             var cy = parseFloat(e.selectedShape.attr("y"));
 
+            // Set the size and position of the popup
             var width = 100; 
             var height = 30;
 
@@ -40,8 +46,10 @@
                 15 :
                 cy - height/2);
             
+            // Create a group for the popup objects
             popup = svg.append('g')
             
+            // Add a rectangle surrounding the text
             popup.append('rect')
             .attr("x", x+75)
             .attr("y", y-2)
@@ -51,19 +59,22 @@
             .attr("ry", 5)
             .style("fill", "#6d6b6b")
 
+            // Add multiple lines of text
             popup.append("text")
             .append("tspan")
             .attr("x", x+85)
             .attr("y", y+20)
             .text("On-time: " + Math.floor(e.yValue*100)+"%")
             .style("font-size", "14px")
-    
+            
+            // Add in color change effect for mouseover animation
             d3.select(e.selectedShape[0][0])
             .style("stroke-width", "5px")
-            .style("fill", "#18447f")
-            .style("stroke", '#211f1f')
+            .style("fill", "#ff0000")
+            .style("stroke", '#050101')
         }
 
+        // Event to handle mouse exit
         function onLeave(e) {
             if (popup != null) {
                 popup.remove();
@@ -71,9 +82,10 @@
             d3.select(e.selectedShape[0][0])
             .style("stroke-width", "0px")  
             .style("stroke", '#211f1f')
-            .style("fill", "#06303e")  
+            .style("fill", "#f44242")  
         }
 
+        //Set up bar gap for the bar chart
         series.barGap = 0.5
         myChart.draw();   
 
@@ -83,7 +95,7 @@
         .attr("text-anchor", "middle")  
         .style("font-size", titlefont) 
         .style("text-decoration", "bold")  
-        .text("Top Five Airlines with the Highest Average Percentage of On-Time Flights, 2005-2015");   
+        .text("Five Best Performing Airlines-Aloha and Hawaiian Airlines Have the Highest On-Time Percentage with 93% and 92% Respectively");   
 
     }
 

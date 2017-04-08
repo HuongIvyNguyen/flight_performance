@@ -39,6 +39,7 @@
         var y = myChart.addMeasureAxis("y", "ave_delayed");
         y.title = 'Average Number of Delayed Flights'
         y.fontSize = fontsize;
+        y.tickFormat = '%';
         myChart.addSeries(null, dimple.plot.bar);
         myChart.draw();    
 
@@ -102,6 +103,7 @@
         var y = myChart.addMeasureAxis("y", "value");
         y.title = 'The averaged number of flights';
         y.fontSize = fontsize;
+        y.tickFormat = '%';
         var series = myChart.addSeries("variable", dimple.plot.bar);
         var legend = myChart.addLegend(width*0.65, 60, width*0.25, 60, 'right');
         legend.fontSize = fontsize;
