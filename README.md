@@ -57,9 +57,8 @@ After reviewing all the feedback, I made the following changes for my data visua
 + Overwrote the default tooltips and added in new effect for mouseover for the first two bar charts
 + Adjusted the size so that all content can be fitted in a single page without scrolling over horizontally
 
-The final visualization can be accesses via index-final.html file or can be seen here:
+The final visualization can be accesses via index-final.html file.
 
-[alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/index-final.html)
 
 
 ## Resources
