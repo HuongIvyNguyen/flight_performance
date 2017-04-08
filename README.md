@@ -58,7 +58,7 @@ After reviewing all the feedback, I made the following changes for my data visua
 + Adjusted the size so that all content can be fitted in a single page without scrolling over horizontally
 
 The final visualization can be accesses via index-final.html file or can be seen here:
-[alt tag](http://localhost:8000/index-final.html)
+[alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/index-final.html)
 
 
 ## Resources
