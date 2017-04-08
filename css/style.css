@@ -12,6 +12,4 @@ svg {
   margin: auto;
 }
 
-rect.dimple-custom-tooltip-box {
-    fill: red !important;
-}
+div.content { width: 1000px }
