@@ -34,7 +34,7 @@ After creating these two plots, I went further to investigate the most common ca
 
 Lastly, I also investigated the performance of these airlines (in the top five delayed list) by generating two scatter plots which represents their on-time and arrival thoughout the year. Howver, since some of these airlines do not have data provided for certain years. These plots did not completely and effectively grade their performance during 2005-2015. Therefore, I decided to not include this particular graph for any data visualization improvement. 
 
-[alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic5.png)
+![alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic5.png)
 
 ### Data Visualization with D3.js and Dimple.js
 I decided to improve the plots generated for the top five airlines with the highest averaged percentage of delayed flights, for the top five airlines with the highest averaged on-time percentage, for the most common delay cause. I implemented D3.js and dimple.js to improve the visualization of these plots. I then collected feedback and reevaluated my design a bit for all the charts. The intial design can be viewed in index-initial.html.
