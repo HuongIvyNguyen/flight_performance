@@ -24,7 +24,7 @@ The detailed of this step can be viewed via data/flight_performance_2005_2015.Rm
 
 Hence, I decided to organize my data more by averaging the number of delayed flights and the on-time percentage by carriers within that time period. I then generated two different bar charts which show the top five airlines with the highest averaged number of delayed flights ,and the top five airlines with the highest averaged on-time percentage during 2005-2015. The following plots were obtained: 
 
-![alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic2.png)
+![alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic2.png
 
 ![alt tag](https://github.com/HuongIvyNguyen/flight_performance/blob/master/figures/pic3.png)
 
@@ -62,8 +62,6 @@ After reviewing all the feedback, I made the following changes for my data visua
 I chose to keep the tooltip format for the bar chart representing the most common cause in delaying flights since I like how it shows the information for each carrier with the responding variable. Also, I like the underline effect, whick helps to compare which is the most common cause in delaying flights for all cariers in the top-five-delay list. 
 
 The final visualization can be accesses via index-final.html file.
-
-
 
 ## Resources
 + [Dimple.js](http://dimplejs.org/)
