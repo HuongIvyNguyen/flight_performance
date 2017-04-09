@@ -59,7 +59,7 @@ After reviewing all the feedback, I made the following changes for my data visua
 + Adjusted the size so that all content can be fitted in a single page without scrolling over horizontally
 + Corrected all titles for all charts so the graphs are more explanatory and storytelling to the audience. 
 
-I chose to keep the tooltip format for the last bar chart since I like how it shows the information for each carrier with the responding variable. Also, I like the underline effect, whick helps to compare which is the most common cause in delaying flights for all cariers in the top-five-delay list. 
+I chose to keep the tooltip format for the bar chart representing the most common cause in delaying flights since I like how it shows the information for each carrier with the responding variable. Also, I like the underline effect, whick helps to compare which is the most common cause in delaying flights for all cariers in the top-five-delay list. 
 
 The final visualization can be accesses via index-final.html file.
 
